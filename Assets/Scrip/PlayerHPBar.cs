@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHPBar : MonoBehaviour
 {
@@ -20,8 +21,11 @@ public class PlayerHPBar : MonoBehaviour
         if (Health<=0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene("Dead");
+
         }
         CHP = Health;
         HP.text = "HP : " + CHP;
     }
+    
 }
