@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHPBar : MonoBehaviour
 {
-    [SerializeField] GameObject Enemy;
+    [SerializeField] Collider Enemy;
     int Health,CHP;
     [SerializeField] Text HP;
     private void Start()
