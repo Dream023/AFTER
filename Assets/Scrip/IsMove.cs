@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMove : MonoBehaviour
+public class IsMove : MonoBehaviour
 {
-    // Start is called before the first frame update
+    static public bool ismove;
     void Start()
     {
-        
+        ismove = true;
     }
-
-    // Update is called once per frame
     void Update()
     {
         

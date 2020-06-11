@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class BulletMove : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] int AttackDamage;
+    bool isHitEnemy;
     private void Start()
     {
-        AttackDamage = 20;
+        AttackDamage = PlayerStatus.PlayerDamage;
     }
     void Update()
     {
@@ -24,11 +24,23 @@ public class BulletMove : MonoBehaviour
     }
     private void OnTriggerEnter(Collider Hit)
     {
-        EnemyHP enemy = Hit.GetComponent<EnemyHP>();
-        if (enemy != null)
+        if (Hit.name=="EnemyCollider")
         {
-            enemy.TakeDamage(AttackDamage);
+                EnemyStatus Damage = Hit.GetComponent<EnemyStatus>();
+                if (Damage != null)
+                {
+                    Damage.GetDamageEnemy(PlayerStatus.PlayerDamage);
+                    Destroy(gameObject);
+                }
         }
-        Destroy(gameObject);
+        else if (Hit.name == "BossCollider")
+        {
+            BossStatus Damage = Hit.GetComponent<BossStatus>();
+            if (Damage != null)
+            {
+                Damage.GetDamageBoss(PlayerStatus.PlayerDamage);
+                Destroy(gameObject);
+            }
+        }
     }
 }
