@@ -13,11 +13,15 @@ public class BulletMove : MonoBehaviour
     void Update()
     {
         transform.Translate(0f,speed*Time.deltaTime,0f); 
-        if(transform.position.z>=50||transform.position.z<=-50)
+        if(transform.position.z>=500||transform.position.z<=-500)
         {
             Destroy(gameObject);
         }
-        else if (transform.position.x >= 50||transform.position.x<=-50)
+        else if (transform.position.x >= 500||transform.position.x<=-500)
+        {
+            Destroy(gameObject);
+        }
+        else if (transform.position.y >= 20|| transform.position.y <= -20)
         {
             Destroy(gameObject);
         }

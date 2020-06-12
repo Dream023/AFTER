@@ -9,7 +9,7 @@ public class CameraMove : MonoBehaviour
     {
         if (IsMove.ismove == true)
         {
-            transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 6, Player.transform.position.z - 6);
+            transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y +8, Player.transform.position.z+2);
         }
     }
 }

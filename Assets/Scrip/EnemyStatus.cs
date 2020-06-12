@@ -35,7 +35,7 @@ public class EnemyStatus : MonoBehaviour
     }
     private void OnTriggerEnter(Collider Hit)
     {
-        if (Hit.name == "Player")
+        if (Hit.name == "Atomata")
         {
             PlayerStatus Damage = Hit.GetComponent<PlayerStatus>();
             if (Damage != null)
