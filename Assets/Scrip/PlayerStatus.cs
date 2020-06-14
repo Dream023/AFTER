@@ -83,6 +83,8 @@ public class PlayerStatus : MonoBehaviour
 
     public void LoadPlayer()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
         PlayerData data = SaveSystem.LoadPlayer();
         CHP = data.CHP2;
         PlayerDamage = data.PlayerDamage2;
@@ -96,6 +98,8 @@ public class PlayerStatus : MonoBehaviour
         position.y = data.position[1];
         position.z = data.position[2];
         transform.position = position;
+
+        
 
     }
 
