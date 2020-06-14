@@ -30,7 +30,7 @@ public class PlayerStatus : MonoBehaviour
     }
    public void Update()
     {
-        PlayerHP.text = "HP : " + CHP;
+       PlayerHP.text = "HP : " + CHP;
         PlayerLevel.text = "LV." + Level;
         if (CHP <= 0)
         {
@@ -78,6 +78,7 @@ public class PlayerStatus : MonoBehaviour
 
     public void SavePlayer()
     {
+        Debug.Log("Save");
         SaveSystem.SavePlayer(this);
     }
 
