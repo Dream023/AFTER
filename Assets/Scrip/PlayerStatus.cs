@@ -7,9 +7,18 @@ using UnityEngine.SceneManagement;
 public class PlayerStatus : MonoBehaviour
 {
     static public int CHP, PlayerDamage, Exp, MaxHp, Level;
-    int ExpToNextLevel,playerDef;
+    public int ExpToNextLevel,playerDef;
+    
+    public int CHP2 = CHP;
+    public int PlayerDamge2 = PlayerDamage;
+    public int Exp2 = Exp;
+    public int MaxHp2 = MaxHp;
+    public int Level2 = Level;
+   
+
+
     [SerializeField] Text PlayerHP,PlayerLevel;
-    void Start()
+    public void Start()
     {
         MaxHp = 100;
         CHP = MaxHp;
@@ -19,7 +28,7 @@ public class PlayerStatus : MonoBehaviour
         Exp = 0;
         playerDef = 0;
     }
-    void Update()
+   public void Update()
     {
         PlayerHP.text = "HP : " + CHP;
         PlayerLevel.text = "LV." + Level;
@@ -46,7 +55,17 @@ public class PlayerStatus : MonoBehaviour
         {
             CHP = MaxHp;
         }
-    }
+         CHP2 = CHP;
+         PlayerDamge2 = PlayerDamage;
+         Exp2 = Exp;
+         MaxHp2 = MaxHp;
+        Level2 = Level;
+
+
+
+
+
+}
     void Die()
     {
         Destroy(gameObject);
@@ -56,4 +75,29 @@ public class PlayerStatus : MonoBehaviour
         CHP -= Mathf.Clamp(CHP,0, (Damage - playerDef));
         return;
     }
+
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        CHP = data.CHP2;
+        PlayerDamage = data.PlayerDamage2;
+        Exp = data.Exp2;
+        MaxHp = data.MaxHp2;
+        Level = data.Level2;
+        ExpToNextLevel = data.ExpToNextLevel;
+        playerDef = data.playerDef;
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+        transform.position = position;
+
+    }
+
+
 }

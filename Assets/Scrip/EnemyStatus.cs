@@ -28,7 +28,7 @@ public class EnemyStatus : MonoBehaviour
             Die();
         }
     }
-    void Die()
+     void Die()
     {
         Destroy(Enemy);
         PlayerStatus.Exp += ExpPoint;
