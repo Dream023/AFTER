@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class BossStatus : MonoBehaviour
 {
-    [SerializeField] GameObject Boss;
+    [SerializeField] GameObject Boss,Door;
     [SerializeField] int InputExp, HP, BossAttack, BossDef;
     [SerializeField] Text BossCHP;
-    static public int CHP;
+    int CHP;
     int ExpPoint;
     void Start()
     {
@@ -32,6 +32,7 @@ public class BossStatus : MonoBehaviour
     {
         Destroy(Boss);
         PlayerStatus.Exp += ExpPoint;
+        Destroy(Door);
     }
     private void OnTriggerEnter(Collider Hit)
     {

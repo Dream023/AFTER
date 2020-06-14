@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class EnemyStatus : MonoBehaviour
 {
     [SerializeField] GameObject Enemy;
-    [SerializeField] int InputExp, HP,EnemyAttack,EnemyDef;
+    [SerializeField] int InputExp, HP,EnemyAttack,EnemyDef,Heal;
     [SerializeField] Text EnemyCHP;
-    static public int CHP;
+    int CHP;
     int ExpPoint;
     void Start()
     {
@@ -32,6 +32,10 @@ public class EnemyStatus : MonoBehaviour
     {
         Destroy(Enemy);
         PlayerStatus.Exp += ExpPoint;
+        if (PlayerStatus.CHP<=PlayerStatus.MaxHp)
+        {
+            PlayerStatus.CHP += Heal;
+        }
     }
     private void OnTriggerEnter(Collider Hit)
     {

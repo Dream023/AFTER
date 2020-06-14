@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStatus : MonoBehaviour
 {
-    static public int CHP, PlayerDamage, Exp, Level;
-    int Hp, ExpToNextLevel,playerDef;
+    static public int CHP, PlayerDamage, Exp, MaxHp, Level;
+    int ExpToNextLevel,playerDef;
     [SerializeField] Text PlayerHP,PlayerLevel;
     void Start()
     {
-        Hp = 100;
-        CHP = Hp;
+        MaxHp = 100;
+        CHP = MaxHp;
         Level = 1;
         ExpToNextLevel = 20;
         PlayerDamage = 10;
@@ -31,16 +31,20 @@ public class PlayerStatus : MonoBehaviour
         else if (Exp >= ExpToNextLevel)
         {
             Level++;
-            Hp += 10;
+            MaxHp += 10;
             PlayerDamage += 1;
-            Exp = 0;
+            Exp = Exp-ExpToNextLevel;
             ExpToNextLevel = 0;
             ExpToNextLevel = 20 * Level;
-            CHP = Hp;
+            CHP = MaxHp;
             if (Level%5==0)
             {
                 playerDef++;
             }
+        }
+        else if (CHP >= MaxHp)
+        {
+            CHP = MaxHp;
         }
     }
     void Die()
