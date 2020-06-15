@@ -706,6 +706,7 @@ MonoBehaviour:
   Exp2: 0
   MaxHp2: 0
   Level2: 0
+  PlayerPosition2: {fileID: 0}
   PlayerHP: {fileID: 395912854}
   PlayerLevel: {fileID: 1904571057}
 --- !u!1 &224482276
@@ -3031,7 +3032,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Load
+  m_Text: Resume
 --- !u!222 &1165116105
 CanvasRenderer:
   m_ObjectHideFlags: 0

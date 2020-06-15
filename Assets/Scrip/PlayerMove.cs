@@ -19,7 +19,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void Update()
     {
-        if (management.IsMove==true)
+        if (management.IsMove == true)
         {
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {

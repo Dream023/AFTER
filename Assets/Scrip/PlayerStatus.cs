@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStatus : MonoBehaviour
 {
+    [SerializeField] static public GameObject PlayerPosition;
     [SerializeField] GameObject Menu,SaveMenu;
     static public int CHP, PlayerDamage, Exp, MaxHp, Level;
     public int ExpToNextLevel,playerDef;
@@ -15,6 +16,7 @@ public class PlayerStatus : MonoBehaviour
     public int Exp2 = Exp;
     public int MaxHp2 = MaxHp;
     public int Level2 = Level;
+    public GameObject PlayerPosition2;
    
 
 
@@ -61,7 +63,7 @@ public class PlayerStatus : MonoBehaviour
          Exp2 = Exp;
          MaxHp2 = MaxHp;
         Level2 = Level;
-
+        PlayerPosition2 = PlayerPosition;
 
 
 
@@ -88,6 +90,7 @@ public class PlayerStatus : MonoBehaviour
         Menu.SetActive(false);
         SaveMenu.SetActive(false);
         management.IsMenu = true;
+        management.IsMove = true;
 
         PlayerData data = SaveSystem.LoadPlayer();
         CHP = data.CHP2;
@@ -103,7 +106,6 @@ public class PlayerStatus : MonoBehaviour
         position.z = data.position[2];
         transform.position = position;
 
-        
 
     }
 
