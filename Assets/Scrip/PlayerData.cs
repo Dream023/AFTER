@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [System.Serializable]
-public class PlayerData : MonoBehaviour
+public class PlayerData
 {
     public int CHP2, PlayerDamage2, Exp2, MaxHp2, Level2, ExpToNextLevel, playerDef;
     public float[] position;

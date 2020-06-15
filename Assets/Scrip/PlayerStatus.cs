@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStatus : MonoBehaviour
 {
+    [SerializeField] GameObject Menu,SaveMenu;
     static public int CHP, PlayerDamage, Exp, MaxHp, Level;
     public int ExpToNextLevel,playerDef;
     
@@ -83,7 +84,9 @@ public class PlayerStatus : MonoBehaviour
 
     public void LoadPlayer()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Menu.SetActive(false);
+        SaveMenu.SetActive(false);
+        management.IsMenu = true;
 
         PlayerData data = SaveSystem.LoadPlayer();
         CHP = data.CHP2;

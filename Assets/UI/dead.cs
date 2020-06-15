@@ -7,6 +7,6 @@ public class dead : MonoBehaviour
 {
     public void Dead()
     {
-        SceneManager.LoadScene("menu");
+        SceneManager.LoadScene("Map");
     }
 }

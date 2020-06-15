@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    [SerializeField] GameObject SaveUI;
     [SerializeField] static public float Speed;
     [SerializeField] CharacterController controller;
     public float Gravity = -9.81f, grounddistance = 0.1f;
     public Transform groundcheck;
     public LayerMask Ground;
     bool isGroundCheck;
+    int i = 0;
     Vector3 velocity;
     private void Start()
     {
@@ -17,7 +19,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void Update()
     {
-        if (IsMove.ismove==true)
+        if (management.IsMove==true)
         {
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
@@ -28,6 +30,20 @@ public class PlayerMove : MonoBehaviour
                 Speed = Speed / 2;
             }
             Move1();
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            i++;
+            if (i % 2 == 1)
+            {
+                SaveUI.SetActive(true);
+                management.IsMove = false;
+            }
+            else if (i % 2 == 0)
+            {
+                SaveUI.SetActive(false);
+                management.IsMove = true;
+            }
         }
     }
     void Move1()
