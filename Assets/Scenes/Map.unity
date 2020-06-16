@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e06c222f6197b40a9d60597555a279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SaveUI: {fileID: 14446756}
+  SaveMenuUI: {fileID: 14446756}
 --- !u!1 &132758839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,8 +1024,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 221936896}
-        m_MethodName: LoadPlayer
+      - m_Target: {fileID: 14446758}
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

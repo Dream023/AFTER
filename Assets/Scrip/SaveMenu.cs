@@ -4,27 +4,37 @@ using UnityEngine;
 
 public class SaveMenu : MonoBehaviour
 {
-    [SerializeField] GameObject SaveUI;
-    int i=0;
-    void Start()
+    static public bool IsSaveMenu = false;
+    [SerializeField] GameObject SaveMenuUI;
+    private void Start()
     {
-        SaveUI.SetActive(false);
+        SaveMenuUI.SetActive(false);
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            i++;
-            if(i%2==1)
+            if(IsSaveMenu)
             {
-                SaveUI.SetActive(true);
-                management.IsMove = false;
+                Resume();
             }
-            else if (i % 2 == 0)
+            else
             {
-                SaveUI.SetActive(false);
-                management.IsMove = true;
+                Pause();
             }
         }
+    }
+    public void Resume()
+    {
+        SaveMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        IsSaveMenu = false;
+        management.IsMove = true;
+    }
+    void Pause()
+    {
+        SaveMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        IsSaveMenu = true;
     }
 }
