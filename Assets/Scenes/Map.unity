@@ -5761,6 +5761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Menu: {fileID: 1083740999}
   SaveMenu: {fileID: 14446756}
+  PlayerPosition: {fileID: 1146081550}
   ExpToNextLevel: 0
   playerDef: 0
   CHP2: 0
