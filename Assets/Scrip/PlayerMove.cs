@@ -10,9 +10,10 @@ public class PlayerMove : MonoBehaviour
     public float Gravity = -9.81f, grounddistance = 0.1f;
     public Transform groundcheck;
     public LayerMask Ground;
-    bool isGroundCheck;
+    bool isGroundCheck, isThrowing = false;
     int i = 0;
     Vector3 velocity;
+    float t = 0.8f;
     private void Start()
     {
         Speed = 5f;
@@ -21,6 +22,8 @@ public class PlayerMove : MonoBehaviour
     {
         if (management.IsMove == true)
         {
+            if (isThrowing)
+                return;
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 Speed = Speed * 2;
@@ -29,21 +32,13 @@ public class PlayerMove : MonoBehaviour
             {
                 Speed = Speed / 2;
             }
+            else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Speed = 0f;
+                StartCoroutine(ThrowingTime());
+                return;
+            }
             Move1();
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            i++;
-            if (i % 2 == 1)
-            {
-                SaveUI.SetActive(true);
-                management.IsMove = false;
-            }
-            else if (i % 2 == 0)
-            {
-                SaveUI.SetActive(false);
-                management.IsMove = true;
-            }
         }
     }
     void Move1()
@@ -64,6 +59,13 @@ public class PlayerMove : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, roll, 0f);
             controller.Move(Move * Speed * Time.deltaTime);
         }
+    }
+    IEnumerator ThrowingTime()
+    {
+        isThrowing = true;
+        yield return new WaitForSeconds(t);
+        Speed = 5f;
+        isThrowing = false;
     }
 }
 
