@@ -5,9 +5,12 @@ using UnityEngine;
 public class Menu : MonoBehaviour
 {
     [SerializeField] GameObject MenuScenes;
+    [SerializeField] GameObject All;
+    [SerializeField] GameObject Cut;
     void Start()
     {
         MenuScenes.SetActive(true);
+        Cut.SetActive(false);
     }
     void Update()
     {
@@ -22,12 +25,25 @@ public class Menu : MonoBehaviour
     }
     public void StartGame()
     {
+        All.SetActive(false);
         management.IsMenu = false;
-        management.IsMove = true;
-        return;
+        
     }
     public void SaveMenu()
     {
 
     }
+    public void Skip()
+    {
+        Cut.SetActive(false);
+        All.SetActive(true);
+        management.IsMove = true;
+        return;
+    }
+    public void Quit()
+    {
+        Debug.Log("END");
+        Application.Quit();
+    }
+
 }
