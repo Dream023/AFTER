@@ -5855,3 +5855,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCharecter: {fileID: 2140447427}
+--- !u!114 &2140447430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140447422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e06c222f6197b40a9d60597555a279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SaveMenuUI: {fileID: 14446756}

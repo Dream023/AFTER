@@ -12,7 +12,7 @@ public class SaveMenu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             if(IsSaveMenu)
             {
