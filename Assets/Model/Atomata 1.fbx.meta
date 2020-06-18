@@ -98,7 +98,19 @@ ModelImporter:
     4300000: Boby
     4300002: Cube
     4300004: Hair
-    7400000: Armature|Here
+    7400000: Light|CameraAction
+    7400002: Light|HairAction
+    7400004: Light|LightAction
+    7400006: Camera|CameraAction
+    7400008: Camera|HairAction
+    7400010: Camera|LightAction
+    7400012: Hair|CameraAction
+    7400014: Hair|HairAction
+    7400016: Hair|LightAction
+    7400018: Armature|CameraAction
+    7400020: Armature|HairAction
+    7400022: Armature|Here
+    7400024: Armature|LightAction
     9500000: //RootNode
     10800000: Light
     13700000: Boby
