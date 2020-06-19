@@ -62,7 +62,7 @@ public class PlayerStatus : MonoBehaviour
          Exp2 = Exp;
          MaxHp2 = MaxHp;
         Level2 = Level;
-        PlayerPosition2.transform.position = PlayerPosition.transform.position;
+        PlayerPosition2 = PlayerPosition;
 
 
 
