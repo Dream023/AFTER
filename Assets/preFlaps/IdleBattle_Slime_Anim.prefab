@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 7342313549126337456}
-  Slime: {fileID: 4785314516203714397}
+  animator: {fileID: 4785314516203714397}
   Lookrange: 10
   Speed: 100
 --- !u!195 &8596407324028640116

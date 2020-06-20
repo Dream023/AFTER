@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BossStatus : MonoBehaviour
 {
-    [SerializeField] GameObject Boss,Door;
+    [SerializeField] GameObject Boss,Door1,Door2;
     [SerializeField] int InputExp, HP, BossAttack, BossDef;
     [SerializeField] Text BossCHP;
     int CHP;
@@ -32,7 +32,8 @@ public class BossStatus : MonoBehaviour
     {
         Destroy(Boss);
         PlayerStatus.Exp += ExpPoint;
-        Destroy(Door);
+        Destroy(Door1);
+        Destroy(Door2);
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
         Destroy(enemy);

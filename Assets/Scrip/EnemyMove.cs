@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyMove : MonoBehaviour
 {
     [SerializeField] Rigidbody Enemy;
-    [SerializeField] Animator Slime;
+    [SerializeField] Animator animator;
     public float Lookrange;
     Transform Target;
     NavMeshAgent agent;
@@ -22,7 +22,7 @@ public class EnemyMove : MonoBehaviour
         if (Distance <= Lookrange)
         {
             Enemy.velocity=transform.forward*Speed*Time.deltaTime;
-            Slime.SetBool("IsMove", true);
+            animator.SetBool("IsMove", true);
             if (Distance <= agent.stoppingDistance)
             {
                 LookAtTarget();
@@ -30,7 +30,7 @@ public class EnemyMove : MonoBehaviour
         }
         else
         {
-            Slime.SetBool("IsMove", false);
+            animator.SetBool("IsMove", false);
         }
     }
     void LookAtTarget()
