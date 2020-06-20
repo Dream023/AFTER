@@ -90,6 +90,8 @@ public class PlayerStatus : MonoBehaviour
         SaveMenu.SetActive(false);
         management.IsMenu = true;
         management.IsMove = true;
+        Time.timeScale = 1f;
+        TestSpawn.EnemyCount = 0;
 
         PlayerData data = SaveSystem.LoadPlayer();
         CHP = data.CHP2;

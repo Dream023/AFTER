@@ -33,6 +33,10 @@ public class BossStatus : MonoBehaviour
         Destroy(Boss);
         PlayerStatus.Exp += ExpPoint;
         Destroy(Door);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        Destroy(enemy);
+        TestSpawn.EnemyCount = 0;
     }
     private void OnTriggerEnter(Collider Hit)
     {

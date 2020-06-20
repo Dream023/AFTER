@@ -17,10 +17,10 @@ public class Chase : MonoBehaviour
     {
         if(Vector3.Distance(player.position,this.transform.position)<10)
         {
-            Vector3 direction=player.position-thistransform.position;
+            Vector3 direction=player.position-this.transform.position;
             direction.y = 0;
 
-            this.transform.roration=Quaternion.Slerp(this.transform.rotation,Quaternion.LookRotation(direction),0.1f);
+            this.transform.rotation=Quaternion.Slerp(this.transform.rotation,Quaternion.LookRotation(direction),0.1f);
             
             anim.SetBool("isIdle",false);
             if(direction.magnitude>5)
@@ -42,5 +42,4 @@ public class Chase : MonoBehaviour
             anim.SetBool("isAttacking",false);
         }
     }
-}
 }

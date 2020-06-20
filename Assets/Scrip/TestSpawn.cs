@@ -13,7 +13,7 @@ public class TestSpawn : MonoBehaviour
     }
     void Update()
     {
-    
+
     }
     IEnumerator SpawnDelay()
     {
@@ -24,10 +24,20 @@ public class TestSpawn : MonoBehaviour
     {
         if (other.name == "MainCharecter")
         {
-            if (EnemyCount < 10)
+            if (EnemyCount < 2)
             {
                 StartCoroutine(SpawnDelay());
             }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.name == "MainCharecter")
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in enemies)
+            Destroy(enemy);
+            EnemyCount = 0;
         }
     }
     void Spawn()

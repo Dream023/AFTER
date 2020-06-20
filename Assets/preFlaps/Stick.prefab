@@ -180,6 +180,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   AttackDamage: 0
+  EnemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!54 &54061085491156004
 Rigidbody:
   m_ObjectHideFlags: 0

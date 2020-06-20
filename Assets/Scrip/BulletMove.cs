@@ -6,6 +6,7 @@ public class BulletMove : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] int AttackDamage;
     bool isHitEnemy;
+    public LayerMask EnemyLayer;
     private void Start()
     {
         AttackDamage = PlayerStatus.PlayerDamage;
@@ -28,7 +29,7 @@ public class BulletMove : MonoBehaviour
     }
     private void OnTriggerEnter(Collider Hit)
     {
-        if (Hit.name=="EnemyCollider")
+        if (Hit.name == "EnemyCollider")
         {
                 EnemyStatus Damage = Hit.GetComponent<EnemyStatus>();
                 if (Damage != null)

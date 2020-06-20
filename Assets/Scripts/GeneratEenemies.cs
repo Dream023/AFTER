@@ -4,24 +4,37 @@ using UnityEngine;
 
 public class GeneratEenemies : MonoBehaviour
 {
-    public GameObject theEnemy;
-    public int xPos;
-    public int zPos;
-    public int enemyCount;
+    [SerializeField] GameObject Enemy, SpawnPosition;
+    public float XPosition, ZPosition;
+    static public float EnemyCount = 0;
+    void Start()
+    {
 
-    void Start ();
-    {
-        
     }
-    IEnumerator EnermyDrop()
+    void Update()
     {
-        while (enemyCount < 10)
+
+    }
+    IEnumerator SpawnDelay()
+    {
+        Spawn();
+        yield return new WaitForSeconds(1f);
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.name == "MainCharecter")
         {
-            xPos = Random.Range(1,50);
-            zPos = Random.Range(1,31);
-            Instaniate(theEnemy,new Vector3(xPos,0,zPos),Quaternion.identity);
-            yield return new WaitForSeconds(0.1f);
-            enemyCount +=1;
+            if (EnemyCount < 10)
+            {
+                StartCoroutine(SpawnDelay());
+            }
         }
+    }
+    void Spawn()
+    {
+        XPosition = Random.Range(SpawnPosition.transform.position.x - 10, SpawnPosition.transform.position.x + 10);
+        ZPosition = Random.Range(SpawnPosition.transform.position.z - 10, SpawnPosition.transform.position.z + 10);
+        Instantiate(Enemy, new Vector3(XPosition, 6f, ZPosition), Quaternion.identity);
+        EnemyCount++;
     }
 }

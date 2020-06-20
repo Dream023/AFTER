@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyStatus : MonoBehaviour
 {
-    [SerializeField] GameObject Enemy,player;
+    public GameObject Enemy,player;
     [SerializeField] int InputExp, HP,EnemyAttack,EnemyDef,Heal;
     [SerializeField] Text EnemyCHP;
     int CHP;

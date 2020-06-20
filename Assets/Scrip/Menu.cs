@@ -11,23 +11,26 @@ public class Menu : MonoBehaviour
     {
         MenuScenes.SetActive(true);
         Cut.SetActive(false);
+        Time.timeScale = 0f;
     }
     void Update()
     {
         if (management.IsMenu == false)
         {
             MenuScenes.SetActive(false);
+            Time.timeScale = 1f;
         }
         else if (management.IsMenu == true)
         {
             MenuScenes.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
     public void StartGame()
     {
         All.SetActive(false);
         management.IsMenu = false;
-        
+        TestSpawn.EnemyCount = 0;
     }
     public void SaveMenu()
     {

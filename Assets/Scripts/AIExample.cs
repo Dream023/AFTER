@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
+using UnityEngine.AI;
 
 
 
 public class AIExampale : MonoBehaviour
 {
     public enum WanderType{Random,Waypoint};
-
-    public ThirdPersonController tpsc;
-    public WanderType wanderType = Wander.Pandom;
+    public ThirdPersonUserControl tpsc;
+    public WanderType wander = WanderType.Random;
     public float wanderSpeed =4f;
     public float chaseSpeed =7f;
     public float fov = 120f;
@@ -22,7 +22,7 @@ public class AIExampale : MonoBehaviour
     private bool isAware = false;
     private bool isDetecting = false;
     private Vector3 wanderPoint;
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
     private Renderer renderrer;
     private int waypointIndex = 0;
     private Animator animator;
@@ -31,8 +31,8 @@ public class AIExampale : MonoBehaviour
     public void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        renderer = GetComponent<Renderer>();
-        animator = GetComponentInchildren<Animator>();
+        renderrer = GetComponent<Renderer>();
+        animator = GetComponentInChildren<Animator>();
         wanderPoint = RandomWanderPoint();
     }
     public void Update()
@@ -41,11 +41,11 @@ public class AIExampale : MonoBehaviour
         {
             agent.SetDestination(tpsc.transform.position);
             animator.SetBool("Aware",true);
-            agend.speed = chaseSpeed;
+            agent.speed = chaseSpeed;
             if (!isDetecting)
             {
-                loseTimer += Time.delTime;
-                if (loseTime >= loseThres.position)
+                loseTimer += Time.deltaTime;
+                if (loseTimer >= loseThreshold)
                 {
                     isAware = false;
                     loseTimer = 0;
@@ -58,7 +58,7 @@ public class AIExampale : MonoBehaviour
             SearchForPlayer();
             Wander();
             animator.SetBool("Aware",false);
-            agend.speed = wanderSpeed;
+            agent.speed = wanderSpeed;
             //renderer.material.coler = Coler.blue;
         }
     }
@@ -70,11 +70,11 @@ public class AIExampale : MonoBehaviour
             if(Vector3.Distance(tpsc.transform.position,transform.position) < viewDistance)
             {
                 RaycastHit hit;
-                if (Physic.Linecast(transform.position,tpsc.transform.position,out put,-1))
+                if (Physics.Linecast(transform.position,tpsc.transform.position,out put,-1))
                 {
                     if(hit.transform.CompareTag("Player"))
                     {
-                        OnAware();
+                        OnAward();
                     }
                     else
                     {
@@ -107,9 +107,9 @@ public class AIExampale : MonoBehaviour
 
     public void Wander()
     {
-        if(wanderType == WanderType.Random)
+        if(wander == WanderType.Random)
         {
-            if(Vector3,Distance(transform.position,wanderPoint)<2f)
+            if(Vector3.Distance(transform.position,wanderPoint)<2f)
             {
                wanderPoint = RandomWanderPoint();
             }
@@ -125,7 +125,7 @@ public class AIExampale : MonoBehaviour
             {
                 if (Vector3.Distance(waypoints[waypointIndex].position,transform.position) < 2f)
                 {
-                   if (waypointsIndex == waypoint.Length-1)
+                   if (waypointIndex == waypoints.Length-1)
                    {
                      waypointIndex =0;
                    }
@@ -141,16 +141,16 @@ public class AIExampale : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Please assign more than 1 waypoint to the AI:"+GameObject.name);
+                Debug.LogWarning("Please assign more than 1 waypoint to the AI:"+gameObject.name);
             }
         }   
     }
 
     public Vector3 RandomWanderPoint()
     {
-        Vector3 randomPoint = (Random.insidUnitSphere*wanderRadius) + transform.position;
+        Vector3 randomPoint = (Random.insideUnitSphere*wanderRadius) + transform.position;
         NavMeshHit navHit;
         NavMesh.SamplePosition(randomPoint,out navHit,wanderRadius,-1);
-        return new Vector3(navHit.position.X,transform.position.y,navhit.position.z);
+        return new Vector3(navHit.position.x,transform.position.y,navHit.position.z);
     }
 }
