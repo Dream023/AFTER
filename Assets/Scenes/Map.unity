@@ -1120,6 +1120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 716098993}
   Door1: {fileID: 1269732793}
   Door2: {fileID: 0}
@@ -1734,7 +1736,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba11ef6318c64d4b8c34514db2ffb7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walk: {fileID: 0}
   Enemy: {fileID: 267322346}
   animator: {fileID: 267322348}
   Lookrange: 12
@@ -2303,6 +2304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 1284600087}
   Door1: {fileID: 1468926431}
   Door2: {fileID: 1987641600}
@@ -2790,6 +2793,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 974546069}
   Door1: {fileID: 1468926431}
   Door2: {fileID: 1987641600}
@@ -3348,6 +3353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 1407801298}
   Door1: {fileID: 390084426}
   Door2: {fileID: 0}
@@ -4975,6 +4982,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 267322342}
   Door1: {fileID: 1468926431}
   Door2: {fileID: 1987641600}
@@ -5027,6 +5036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 769996045}
   Door1: {fileID: 1798000270}
   Door2: {fileID: 0}
@@ -5532,6 +5543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 1950812990}
   Door1: {fileID: 585041102}
   Door2: {fileID: 0}
@@ -5934,11 +5947,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 8300000, guid: c6bcf75ed2c94384caf2be5f1da5b037, type: 3}
+  GetHit: {fileID: 8300000, guid: c6bcf75ed2c94384caf2be5f1da5b037, type: 3}
   Boss: {fileID: 1888970818}
   Door1: {fileID: 520407415}
   Door2: {fileID: 0}
   InputExp: 500
-  HP: 10
+  HP: 20
   BossAttack: 100
   BossDef: 0
   BossCHP: {fileID: 1604937223}
@@ -6336,6 +6351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 287059673}
   Door1: {fileID: 994732927}
   Door2: {fileID: 0}
@@ -6408,7 +6425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba11ef6318c64d4b8c34514db2ffb7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walk: {fileID: 0}
   Enemy: {fileID: 974546073}
   animator: {fileID: 974546075}
   Lookrange: 20
@@ -7562,6 +7578,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 794316118}
   Door1: {fileID: 892153452}
   Door2: {fileID: 0}
@@ -7971,6 +7989,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 717818047}
   Door1: {fileID: 112838512}
   Door2: {fileID: 0}
@@ -8100,6 +8120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 239716250}
   Door1: {fileID: 862277553}
   Door2: {fileID: 0}
@@ -8679,6 +8701,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 1505164844}
   Door1: {fileID: 347564949}
   Door2: {fileID: 0}
@@ -8823,7 +8847,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba11ef6318c64d4b8c34514db2ffb7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walk: {fileID: 0}
   Enemy: {fileID: 1223392437}
   animator: {fileID: 1223392439}
   Lookrange: 16
@@ -9280,7 +9303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba11ef6318c64d4b8c34514db2ffb7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walk: {fileID: 0}
   Enemy: {fileID: 1284600091}
   animator: {fileID: 1284600093}
   Lookrange: 14
@@ -9435,6 +9457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 1838832220}
   Door1: {fileID: 1148028983}
   Door2: {fileID: 0}
@@ -9592,6 +9616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 9009541182035767780}
   Door1: {fileID: 1468926431}
   Door2: {fileID: 1987641600}
@@ -10848,6 +10874,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 1223392433}
   Door1: {fileID: 1468926431}
   Door2: {fileID: 1987641600}
@@ -10962,6 +10990,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 8300000, guid: c6bcf75ed2c94384caf2be5f1da5b037, type: 3}
+  GetHit: {fileID: 8300000, guid: c840375718b44924284a2962e5342ac0, type: 3}
   Boss: {fileID: 1608396986}
   Door1: {fileID: 93008383}
   Door2: {fileID: 0}
@@ -12030,6 +12060,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 547559724}
   Door1: {fileID: 910606604}
   Door2: {fileID: 0}
@@ -12216,6 +12248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 1311079070}
   Door1: {fileID: 1150960652}
   Door2: {fileID: 0}
@@ -14335,6 +14369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9246486e4e6bcc343a7aef652f135722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GetHit: {fileID: 0}
   Menu: {fileID: 1083740999}
   SaveMenu: {fileID: 14446756}
   PlayerPosition: {fileID: 1146081550}
@@ -14360,7 +14395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a86bc285d922de46a416ef45a25dc1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walk: {fileID: 8300000, guid: f6304d7342fafdb4f98c1a5772179611, type: 3}
+  Walk: {fileID: 0}
   SaveUI: {fileID: 14446756}
   controller: {fileID: 2140447426}
   Gravity: -9.81
@@ -14503,6 +14538,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50324debf501a6a4d9505d7ecf2a8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Break: {fileID: 0}
+  GetHit: {fileID: 0}
   Boss: {fileID: 305635977}
   Door1: {fileID: 1241583674}
   Door2: {fileID: 0}
@@ -14980,7 +15017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba11ef6318c64d4b8c34514db2ffb7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walk: {fileID: 0}
   Enemy: {fileID: 9009541182035767781}
   animator: {fileID: 8961517219767170432}
   Lookrange: 10

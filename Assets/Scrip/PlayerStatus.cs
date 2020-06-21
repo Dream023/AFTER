@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStatus : MonoBehaviour
 {
+    [SerializeField] AudioClip GetHit;
     [SerializeField] GameObject Menu,SaveMenu, PlayerPosition;
     static public int CHP, PlayerDamage, Exp, MaxHp, Level;
     public int ExpToNextLevel,playerDef;
@@ -75,6 +76,7 @@ public class PlayerStatus : MonoBehaviour
     public void GetDamagePlayer(int Damage)
     {
         CHP -= Mathf.Clamp(CHP,0, (Damage - playerDef));
+        AudioSource.PlayClipAtPoint(GetHit, gameObject.transform.position);
         return;
     }
 

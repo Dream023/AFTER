@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BossStatus : MonoBehaviour
 {
+    [SerializeField] AudioClip Break,GetHit;
     [SerializeField] GameObject Boss,Door1,Door2;
     [SerializeField] int InputExp, HP, BossAttack, BossDef;
     [SerializeField] Text BossCHP;
@@ -23,6 +24,7 @@ public class BossStatus : MonoBehaviour
     public void GetDamageBoss(int Damage)
     {
         CHP -= Mathf.Clamp(CHP, 0,Mathf.Max(0, (Damage - BossDef)));
+        AudioSource.PlayClipAtPoint(GetHit, gameObject.transform.position);
         if (CHP <= 0)
         {
             BossCHP.text = "HP : 0";
@@ -43,6 +45,7 @@ public class BossStatus : MonoBehaviour
         foreach (GameObject enemy in enemies)
         Destroy(enemy);
         TestSpawn.EnemyCount = 0;
+        AudioSource.PlayClipAtPoint(Break, gameObject.transform.position);
     }
     private void OnTriggerEnter(Collider Hit)
     {
