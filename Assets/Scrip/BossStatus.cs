@@ -27,8 +27,13 @@ public class BossStatus : MonoBehaviour
         AudioSource.PlayClipAtPoint(GetHit, gameObject.transform.position);
         if (CHP <= 0)
         {
-            BossCHP.text = "HP : 0";
             Die();
+        }
+        switch (CHP)
+        {
+            case 0:
+                Die();
+                break;
         }
     }
     void Die()

@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] AudioClip Walk;
     [SerializeField] GameObject SaveUI;
     [SerializeField] static public float Speed;
     [SerializeField] CharacterController controller;
@@ -15,7 +15,6 @@ public class PlayerMove : MonoBehaviour
     int i = 0;
     Vector3 velocity;
     float t = 0.8f, horizontal, vertical;
-    bool IsMove=false;
     private void Start()
     {
         Speed = 5f;
@@ -45,7 +44,6 @@ public class PlayerMove : MonoBehaviour
     }
     void Move1()
     {
-        MoveCheck();
         isGroundCheck = Physics.CheckSphere(groundcheck.position, grounddistance, Ground);
         if (isGroundCheck && velocity.y < 0)
         {
@@ -62,10 +60,6 @@ public class PlayerMove : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, roll, 0f);
             controller.Move(Move * Speed * Time.deltaTime);
         }
-        if (IsMove == true)
-        {
-            AudioSource.PlayClipAtPoint(Walk, gameObject.transform.position);
-        }
     }
     IEnumerator ThrowingTime()
     {
@@ -73,19 +67,6 @@ public class PlayerMove : MonoBehaviour
         yield return new WaitForSeconds(t);
         Speed = 5f;
         isThrowing = false;
-    }
-    void MoveCheck()
-    {
-        if (horizontal == 0 || vertical == 0)
-        {
-            IsMove = false;
-            return;
-        }
-        else
-        {
-            IsMove = true;
-            return;
-        }
     }
 }
 
