@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossStatus : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class BossStatus : MonoBehaviour
     }
     void Die()
     {
+        if (Boss.name == "Boss5")
+        {
+            SceneManager.LoadScene("Dead");
+        }
         Destroy(Boss);
         PlayerStatus.Exp += ExpPoint;
         Destroy(Door1);
