@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EnemyStatus : MonoBehaviour
 {
     public GameObject Enemy,player;
     [SerializeField] int InputExp, HP,EnemyAttack,EnemyDef,Heal;
-    [SerializeField] Text EnemyCHP;
     int CHP;
     int ExpPoint;
     void Start()
@@ -17,14 +15,13 @@ public class EnemyStatus : MonoBehaviour
     }
     public void Update()
     {
-        EnemyCHP.text = "HP : " + CHP;
+
     }
     public void GetDamageEnemy(int Damage)
     {
         CHP -= Mathf.Clamp(CHP, 0,(Damage - EnemyDef));
        if (CHP <= 0)
         {
-            EnemyCHP.text = "HP : 0";
             Die();
         }
     }
