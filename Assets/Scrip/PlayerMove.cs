@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    [SerializeField] AudioClip Walk;
     [SerializeField] GameObject SaveUI;
     [SerializeField] static public float Speed;
     [SerializeField] CharacterController controller;
@@ -13,7 +14,8 @@ public class PlayerMove : MonoBehaviour
     bool isGroundCheck, isThrowing = false;
     int i = 0;
     Vector3 velocity;
-    float t = 0.8f;
+    float t = 0.8f, horizontal, vertical;
+    bool IsMove=false;
     private void Start()
     {
         Speed = 5f;
@@ -43,13 +45,14 @@ public class PlayerMove : MonoBehaviour
     }
     void Move1()
     {
+        MoveCheck();
         isGroundCheck = Physics.CheckSphere(groundcheck.position, grounddistance, Ground);
         if (isGroundCheck && velocity.y < 0)
         {
             velocity.y = -2f;
         }
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
         Vector3 Move = new Vector3(horizontal, 0f, vertical).normalized;
         velocity.y += Gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
@@ -59,6 +62,10 @@ public class PlayerMove : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, roll, 0f);
             controller.Move(Move * Speed * Time.deltaTime);
         }
+        if (IsMove == true)
+        {
+            AudioSource.PlayClipAtPoint(Walk, gameObject.transform.position);
+        }
     }
     IEnumerator ThrowingTime()
     {
@@ -66,6 +73,19 @@ public class PlayerMove : MonoBehaviour
         yield return new WaitForSeconds(t);
         Speed = 5f;
         isThrowing = false;
+    }
+    void MoveCheck()
+    {
+        if (horizontal == 0 || vertical == 0)
+        {
+            IsMove = false;
+            return;
+        }
+        else
+        {
+            IsMove = true;
+            return;
+        }
     }
 }
 

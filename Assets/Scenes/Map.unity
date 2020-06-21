@@ -1734,6 +1734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba11ef6318c64d4b8c34514db2ffb7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Walk: {fileID: 0}
   Enemy: {fileID: 267322346}
   animator: {fileID: 267322348}
   Lookrange: 12
@@ -6407,6 +6408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba11ef6318c64d4b8c34514db2ffb7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Walk: {fileID: 0}
   Enemy: {fileID: 974546073}
   animator: {fileID: 974546075}
   Lookrange: 20
@@ -8821,6 +8823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba11ef6318c64d4b8c34514db2ffb7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Walk: {fileID: 0}
   Enemy: {fileID: 1223392437}
   animator: {fileID: 1223392439}
   Lookrange: 16
@@ -9277,6 +9280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba11ef6318c64d4b8c34514db2ffb7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Walk: {fileID: 0}
   Enemy: {fileID: 1284600091}
   animator: {fileID: 1284600093}
   Lookrange: 14
@@ -14356,6 +14360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a86bc285d922de46a416ef45a25dc1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Walk: {fileID: 8300000, guid: f6304d7342fafdb4f98c1a5772179611, type: 3}
   SaveUI: {fileID: 14446756}
   controller: {fileID: 2140447426}
   Gravity: -9.81
@@ -14975,6 +14980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba11ef6318c64d4b8c34514db2ffb7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Walk: {fileID: 0}
   Enemy: {fileID: 9009541182035767781}
   animator: {fileID: 8961517219767170432}
   Lookrange: 10

@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyMove : MonoBehaviour
 {
+    [SerializeField] AudioClip Walk;
     [SerializeField] Rigidbody Enemy;
     [SerializeField] Animator animator;
     public float Lookrange;
@@ -37,6 +38,7 @@ public class EnemyMove : MonoBehaviour
             {
                 LookAtTarget();
             }
+            AudioSource.PlayClipAtPoint(Walk,gameObject.transform.position);
         }
         else
         {
