@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class BossStatus : MonoBehaviour
 {
     [SerializeField] AudioClip Break,GetHit;
-    [SerializeField] GameObject Boss,Door1,Door2;
+    [SerializeField] GameObject Boss,Break1,Break2,Break3,Break4;
     [SerializeField] int InputExp, HP, BossAttack, BossDef;
     [SerializeField] Text BossCHP;
     int CHP;
@@ -44,8 +44,10 @@ public class BossStatus : MonoBehaviour
         }
         Destroy(Boss);
         PlayerStatus.Exp += ExpPoint;
-        Destroy(Door1);
-        Destroy(Door2);
+        Destroy(Break1);
+        Destroy(Break2);
+        Destroy(Break3);
+        Destroy(Break4);
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
         Destroy(enemy);
