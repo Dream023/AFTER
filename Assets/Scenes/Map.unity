@@ -19803,7 +19803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9246486e4e6bcc343a7aef652f135722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GetHit: {fileID: 0}
+  GetHit: {fileID: 8300000, guid: c840375718b44924284a2962e5342ac0, type: 3}
   Menu: {fileID: 1083740999}
   SaveMenu: {fileID: 14446756}
   PlayerPosition: {fileID: 1146081550}
@@ -19814,7 +19814,6 @@ MonoBehaviour:
   Exp2: 0
   MaxHp2: 0
   Level2: 0
-  PlayerPosition2: {fileID: 0}
   PlayerHP: {fileID: 395912854}
   PlayerLevel: {fileID: 1904571057}
 --- !u!114 &2140447424
