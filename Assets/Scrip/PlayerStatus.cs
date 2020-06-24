@@ -101,11 +101,6 @@ public class PlayerStatus : MonoBehaviour
         Level = data.Level2;
         ExpToNextLevel = data.ExpToNextLevel;
         playerDef = data.playerDef;
-        Vector3 position;
-        position.x = data.position[0];
-        position.y = data.position[1];
-        position.z = data.position[2];
-        PlayerPosition.transform.position = position;
 
 
     }
