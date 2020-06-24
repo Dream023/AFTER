@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TestSpawn : MonoBehaviour
 {
+    [SerializeField] AudioClip SpawnSound;
     [SerializeField] GameObject Enemy,SpawnPosition;
     public float XPosition, ZPosition;
     static public float EnemyCount;
@@ -47,5 +48,6 @@ public class TestSpawn : MonoBehaviour
         ZPosition = Random.Range(SpawnPosition.transform.position.z - 10, SpawnPosition.transform.position.z + 10);
         Instantiate(Enemy, new Vector3(XPosition, gameObject.transform.position.y+1, ZPosition), Quaternion.identity);
         EnemyCount++;
+        AudioSource.PlayClipAtPoint(SpawnSound, gameObject.transform.position);
     }
 }
