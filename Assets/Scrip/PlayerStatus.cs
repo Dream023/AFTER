@@ -16,7 +16,6 @@ public class PlayerStatus : MonoBehaviour
     public int Exp2 = Exp;
     public int MaxHp2 = MaxHp;
     public int Level2 = Level;
-    public GameObject PlayerPosition2;
    
 
 
@@ -63,7 +62,6 @@ public class PlayerStatus : MonoBehaviour
          Exp2 = Exp;
          MaxHp2 = MaxHp;
         Level2 = Level;
-        PlayerPosition2 = PlayerPosition;
 
 
 
