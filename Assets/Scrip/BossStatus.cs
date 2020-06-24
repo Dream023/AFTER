@@ -40,7 +40,7 @@ public class BossStatus : MonoBehaviour
     {
         if (Boss.name == "Boss5")
         {
-            SceneManager.LoadScene("Dead");
+            SceneManager.LoadScene("EndCut");
         }
         Destroy(Boss);
         PlayerStatus.Exp += ExpPoint;
